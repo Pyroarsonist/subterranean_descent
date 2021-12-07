@@ -7,20 +7,22 @@ class MainMenuWidget extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              Spacer(),
-              Text('the game',
-                  style: TextStyle(color: Colors.black, fontSize: 40)),
-              Spacer(),
+              const Spacer(),
+              const Text(
+                'the game',
+                style: TextStyle(color: Colors.black, fontSize: 40),
+              ),
+              const Spacer(),
               ElevatedButton(
                 child: const Text('New game'),
                 onPressed: () {
-                  Navigation.navigateTo(RouteKey.initial);
+                  Navigation.navigateTo(RouteKey.game);
                 },
               ),
               ElevatedButton(
                 child: const Text('Continue'),
                 onPressed: () {
-                  Navigation.navigateTo(RouteKey.initial);
+                  Navigation.navigateTo(RouteKey.game);
                 },
               ),
               ElevatedButton(
@@ -29,7 +31,7 @@ class MainMenuWidget extends StatelessWidget {
                   Navigation.navigateTo(RouteKey.initial);
                 },
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

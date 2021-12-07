@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'package:subterranean_descent/game/game.dart';
 import 'package:subterranean_descent/main_menu.dart';
 import 'package:subterranean_descent/splash_screen_widget.dart';
 
-enum RouteKey { initial, mainMenu }
+enum RouteKey { initial, mainMenu, game }
 
 final _routeMap = {
   [RouteKey.initial]: '/',
-  [RouteKey.mainMenu]: '/main-menu'
+  [RouteKey.mainMenu]: '/main-menu',
+  [RouteKey.game]: '/game',
 };
 
 extension RouteKeyExtension on RouteKey {
@@ -17,6 +19,7 @@ extension RouteKeyExtension on RouteKey {
 final routes = {
   RouteKey.initial.path: (context) => SplashScreenWidget(),
   RouteKey.mainMenu.path: (context) => MainMenuWidget(),
+  RouteKey.game.path: (context) => MyGameWidget(),
 };
 
 mixin Navigation {
@@ -28,5 +31,7 @@ mixin Navigation {
 
   static Future<dynamic> nonReturningNavigateTo(RouteKey routeKey) =>
       navigatorKey.currentState!.pushNamedAndRemoveUntil(
-          routeKey.path, (Route<dynamic> route) => false);
+        routeKey.path,
+        (Route<dynamic> route) => false,
+      );
 }
