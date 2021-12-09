@@ -6,14 +6,16 @@ import 'package:subterranean_descent/splash_screen_widget.dart';
 
 enum RouteKey { initial, mainMenu, game }
 
+const initialPath = '/';
+
 final _routeMap = {
-  [RouteKey.initial]: '/',
-  [RouteKey.mainMenu]: '/main-menu',
-  [RouteKey.game]: '/game',
+  RouteKey.initial: initialPath,
+  RouteKey.mainMenu: '/main-menu',
+  RouteKey.game: '/game',
 };
 
 extension RouteKeyExtension on RouteKey {
-  String get path => _routeMap[this] ?? '';
+  String get path => _routeMap[this] ?? initialPath;
 }
 
 final routes = {

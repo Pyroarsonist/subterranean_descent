@@ -13,6 +13,5 @@ class MyApp extends StatelessWidget {
         initialRoute: RouteKey.initial.path,
         routes: routes,
         navigatorKey: Navigation.navigatorKey,
-        // debugShowMaterialGrid: true,
       );
 }

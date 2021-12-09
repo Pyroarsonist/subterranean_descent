@@ -9,11 +9,10 @@ class SplashScreenWidget extends StatefulWidget {
 }
 
 class SplashScreenGameState extends State<SplashScreenWidget> {
-  //todo: wait for flutter 2.5
   @override
   Widget build(BuildContext context) => Scaffold(
         body: FlameSplashScreen(
-          theme: FlameSplashTheme.white,
+          theme: FlameSplashTheme.dark,
           onFinish: (context) => Navigation.navigateTo(RouteKey.mainMenu),
         ),
       );
